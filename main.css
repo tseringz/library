@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input {
+
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+
+    display:block;
+
+}
+
+
+*, *::after, *::before{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    position: relative;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+h1 {
+
+ font-weight: 800;
+ font-size: 2.986rem;
+
+}
+
+h2 {
+
+    font-weight: bold;
+    font-size: 2.488rem;
+}
+
+h3 {
+
+    font-weight: bold;
+    font-size: 2.074rem;
+
+}
+
+h4 {
+
+    font-weight: bold;
+    font-size: 1.728rem;
+    line-height: 24px;
+}
+
+h5 {
+
+    font-weight: 700;
+    font-size: 1.44rem;
+}
+
+
+h6 {
+
+    font-weight: 600;
+    font-size: 1.2rem;
+
+}
+
+p {
+
+    font-size: 1rem;
+    font-weight: normal;
+
+}
+
+
+a {
+
+    text-decoration: none;
+    color: white;
+    line-height: 1.5rem;
+    font-weight: normal;
+
+}
+
+.c-hero {
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    overflow: scroll;
+    padding-bottom: 40px;
+   /* background-image: linear-gradient(90deg, rgba(#AE4BDC, #FF4949); */
+
+}
+
+
+
+.bg-blur {
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    -webkit-filter: blur(200px);
+    filter: blur(200px);
+    z-index: 2;
+
+}
+
+.circle-1 {
+
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background-color: #8267BE;
+}
+
+
+.circle-2 {
+
+    position: absolute;
+    right: -20px;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background-color: #3FA796;
+
+}
+
+.circle-3 {
+
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    left: 30vw;
+    border-radius: 50%;
+    background-color: #FFBD35;
+
+}
+
+/* modal pop up when user click on the add button */
+
+.c-modal {
+
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 45, 45, 30%);
+    z-index: 4;
+    cursor: auto;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+.c-modal-active {
+
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.c-form {
+
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 410px;
+    padding: 40px 40px 40px 40px;
+    background-image: linear-gradient(45deg, #3FA796, #8267BE); 
+
+}
+
+#close {
+
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    right: 32px;
+    top: 24px;
+    cursor: pointer;
+
+}
+
+.c-form__wrapper {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.c-form__wrapper > input {
+
+    background-color: transparent;
+    border-bottom: 1px white solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 48px;
+    color: white;
+    padding: 8px 8px 8px 8px;
+    margin-top: 24px;
+
+}
+
+.c-form__wrapper > input:focus {
+
+    outline: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-bottom: 1px white solid;
+    margin-top: 24px;
+    height: 48px;
+    color: white;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 8px 8px 8px 8px;
+    background-image: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+
+.checked-wrapper {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 24px;
+
+}
+
+input[type=checkbox] {
+
+    --webkit-appearance: none;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    margin-left: 2px;
+    margin-right: 24px;
+    margin-bottom: 0;
+    text-align: center;
+    border: 1px white solid;
+    border-radius: 0;
+    appearance: none;
+    
+}
+
+input:checked {
+
+    border: 1px white solid;
+    
+  }
+
+  input:checked::after {
+
+    content: "✔";
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    margin-left: 0;
+    font-size: 1.375em;
+    color: #F4F5F6;
+    line-height: 0;
+
+  }
+
+  input::placeholder {
+
+    color: rgba(255, 255, 255, 0.2);
+
+  }
+
+  #submit {
+
+    margin-top: 24px;
+    margin-bottom: 24px;
+    background: none;
+    border: 1px white solid;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+
+  }
+
+  #submit:hover {
+
+    background-color: #3FA796;
+    
+  }
+
+
+  .c-click-area {
+
+   position: relative;
+   display: flex;
+   flex-direction: row;
+   padding-left: 80px;
+
+  }
+
+  .click-area {
+
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    width: 16%;
+    height: 100vh;
+    z-index: 4;
+    cursor: url('../library/assets/add-sign-icon-thick.png'), auto !important;
+}
+
+/* Container of the user's books */
+.c-content-wrapper {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    margin-top: 32px;
+    z-index: 2;
+
+}
+
+.c-nav {
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-right: 80px;
+
+}
+
+.c-menu > a {
+
+    margin-right: 32px;
+
+}
+
+.c-menu > input {
+
+    background-color: transparent;
+    border-bottom: 1px white solid;
+    font-size: 1.2rem;
+    width: 180px;
+    height: 40px;
+    color: white;
+    margin-top: 24px;
+    background-color: transparent;
+    border-bottom: 1px white solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 8px 8px 8px 8px;
+    background-image: url(../library/assets/search-icon.svg);
+    background-size: 19px 19px;
+    background-repeat: no-repeat;
+    background-position-x: 16px;
+    background-position-y: 8px;
+
+}
+
+.c-menu > input:focus {
+
+    outline: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-bottom: 1px white solid;
+    margin-top: 24px;
+    height: 40px;
+    color: white;
+    width: 180px;
+    font-size: 1.2rem;
+    padding: 8px 8px 8px 8px;
+    background-image: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+
+.c-menu > input::-webkit-search-cancel-button {
+
+    -webkit-appearance: none;
+    appearance: none;
+    content: "x";
+    color: white;
+
+}
+
+
+button {
+
+    margin-top: 20px;
+    padding: 20px 20px 20px 20px;
+
+}
+
+
+
+
+
+.c-book {
+
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    height: auto;
+    row-gap: 32px;
+    column-gap: 32px;
+    overflow: scroll;
+
+}
+
+.c-book-item {
+
+    height: 296px;
+    background-image: linear-gradient(45deg, #8367be70, #dbdbdb60);
+    z-index: 5;
+    
+}
+
+
+.c-book-item > a:hover {
+    
+    text-decoration: underline;
+
+}
