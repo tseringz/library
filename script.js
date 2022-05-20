@@ -37,14 +37,26 @@ function closeModal() {
 
 
 // constructor function for Books
-function Book(title, author, pages, isRead) {
+class Book {
+
+    constructor(title, author, pages, isRead) {
 
     this.title = title;
     this.author = author;
     this.pages  = pages;
     this.isRead = isRead;
 
+    }
+
 }
+// function Book(title, author, pages, isRead) {
+
+//     this.title = title;
+//     this.author = author;
+//     this.pages  = pages;
+//     this.isRead = isRead;
+
+// }
 
 let myLibrary = [];  // myLibrary, empty array
 
@@ -54,8 +66,10 @@ let myLibrary = [];  // myLibrary, empty array
      const form = document.querySelector('form');
      let userInputs = Array.from(document.querySelectorAll('input'));
 
-     let book  = Object.create(Book);
+     let book  = new Book();
+     console.log(book);
      userInputs.forEach( userInput => {
+
 
        if(userInput.name == "book name") {
 
@@ -111,48 +125,47 @@ function createBook(index) {
         container.appendChild(newDiv);
 
             // New heading for title
-            const bookTitle = document.createElement('h5');
-            bookTitle.textContent = `${index.title.toUpperCase()}`;
-            newDiv.appendChild(bookTitle);
+        const bookTitle = document.createElement('h5');
+        bookTitle.textContent = `${index.title.toUpperCase()}`;
+        newDiv.appendChild(bookTitle);
 
             // New heading for Author
-            const authorName = document.createElement('h6');
-            authorName.style.marginTop = "8px";
-            authorName.textContent = `${index.author.toUpperCase()}`;
-            newDiv.appendChild(authorName);
+        const authorName = document.createElement('h6');
+        authorName.style.marginTop = "8px";
+        authorName.textContent = `${index.author.toUpperCase()}`;
+        newDiv.appendChild(authorName);
 
             // New heading for page
-            const howManyPages = document.createElement('p');
-            howManyPages.style.marginTop = "42px";
-            howManyPages.textContent = `${index.pages.toUpperCase()} Pages`;
-            newDiv.appendChild(howManyPages);
+        const howManyPages = document.createElement('p');
+        howManyPages.style.marginTop = "42px";
+        howManyPages.textContent = `${index.pages.toUpperCase()} Pages`;
+        newDiv.appendChild(howManyPages);
 
              // New Remove Button
-             const removeButton = document.createElement('a');
-             removeButton.classList.add('remove');
-             removeButton.style.cursor = "pointer";
-             removeButton.style.border = "none";
-             removeButton.style.position = "absolute";
-             removeButton.style.bottom = "32px";
-             removeButton.style.right = "32px";
-             removeButton.textContent = "Remove";
-             newDiv.appendChild(removeButton);
-
+        const removeButton = document.createElement('a');
+        removeButton.classList.add('remove');
+        removeButton.style.cursor = "pointer";
+        removeButton.style.border = "none";
+        removeButton.style.position = "absolute";
+        removeButton.style.bottom = "32px";
+        removeButton.style.right = "32px";
+        removeButton.textContent = "Remove";
+        newDiv.appendChild(removeButton);
 
             // Read Button
-            const readCheck = document.getElementById('read');
-            const newRead = document.createElement('a');
-            newRead.style.cursor = "pointer";
-            newRead.style.border = "none";
-            newRead.style.position = "absolute";
-            newRead.style.bottom = "32px";
+        const readCheck = document.getElementById('read');
+        const newRead = document.createElement('a');
+        newRead.style.cursor = "pointer";
+        newRead.style.border = "none";
+        newRead.style.position = "absolute";
+        newRead.style.bottom = "32px";
             
-            if(readCheck.checked) 
+        if(readCheck.checked) 
 
             {
               
-            newRead.textContent = "Reading";
-            newDiv.appendChild(newRead);
+        newRead.textContent = "Reading";
+        newDiv.appendChild(newRead);
 
             }
 
@@ -160,20 +173,20 @@ function createBook(index) {
 
             {
 
-            newRead.textContent = "Finished";
-            newDiv.appendChild(newRead);
+        newRead.textContent = "Finished";
+        newDiv.appendChild(newRead);
 
             }
 
-            newRead.addEventListener('click', function() {
+        newRead.addEventListener('click', function() {
 
-                if(newRead.textContent == "Reading") {
+            if(newRead.textContent == "Reading") {
 
-                    newRead.textContent = "Finished";
+                newRead.textContent = "Finished";
 
                 }
 
-                else {
+          else {
                     
                     newRead.textContent = "Reading";
 
@@ -234,4 +247,6 @@ function restore() {
     }
 }
 restore();
+
+
 
