@@ -63,8 +63,8 @@ let myLibrary = [];  // myLibrary, empty array
  // Add book in the myLibrary array
  function addBookToLibrary() {
     
-     const form = document.querySelector('form');
-     let userInputs = Array.from(document.querySelectorAll('input'));
+    const form = document.querySelector('form');
+    let userInputs = Array.from(document.querySelectorAll('input'));
 
     let book  = new Book(userInputs[0].value, userInputs[1].value, userInputs[2].value, userInputs[3].checked);
     console.log(book);
@@ -102,21 +102,21 @@ function createBook(index) {
         newDiv.classList.add('c-book-item');
         container.appendChild(newDiv);
 
-            // New heading for title
+        // New heading for title
         const bookTitle = document.createElement('h5');
-        bookTitle.textContent = `${index.title.toUpperCase()}`;
+        bookTitle.textContent = `${index.title.charAt(0).toUpperCase() + index.title.slice(1)}`;
         newDiv.appendChild(bookTitle);
 
             // New heading for Author
         const authorName = document.createElement('h6');
         authorName.style.marginTop = "8px";
-        authorName.textContent = `${index.author.toUpperCase()}`;
+        authorName.textContent = `${index.author.charAt(0).toUpperCase() + index.author.slice(1)}`;
         newDiv.appendChild(authorName);
 
             // New heading for page
         const howManyPages = document.createElement('p');
         howManyPages.style.marginTop = "42px";
-        howManyPages.textContent = `${index.pages.toUpperCase()} Pages`;
+        howManyPages.textContent = `${index.pages.chartAt(0)} Pages`;
         newDiv.appendChild(howManyPages);
 
              // New Remove Button
@@ -176,7 +176,9 @@ function createBook(index) {
          }
 
 
-
+// Capitalise String 
+const capitalized = str => str.charAt(0).toUpperCase() + str.slice(1);
+console.log(capitalized('this is fucking crazy'));
 
 // Remove Book from the library
 function removeBook() {
