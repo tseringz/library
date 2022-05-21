@@ -66,30 +66,8 @@ let myLibrary = [];  // myLibrary, empty array
      const form = document.querySelector('form');
      let userInputs = Array.from(document.querySelectorAll('input'));
 
-     let book  = new Book();
-     console.log(book);
-     userInputs.forEach( userInput => {
-
-
-       if(userInput.name == "book name") {
-
-         book.title = userInput.value;
-
-        }
-
-       else if (userInput.name == "author name") {
-
-        book.author = userInput.value;
-
-     }
-
-     else if (userInput.name == "page number") {
-
-          book.pages = userInput.value;
-
-      }   
-    });
-
+    let book  = new Book(userInputs[0].value, userInputs[1].value, userInputs[2].value, userInputs[3].checked);
+    console.log(book);
     myLibrary.push(book);
     updateLocalStorage();
     displayBook();
@@ -207,9 +185,8 @@ function removeBook() {
         if(e.target.classList.contains('remove')) { 
         const currentChild = e.target.parentNode.parentNode.childNodes;
         const count = currentChild.length;
-       // const childIndex = e.target.parentNode.parentNode.children.indexOf(currentChild);
-       // const currentTarget = e.target.parentNode;
-       for ( let i = 0; i < count - 1; ++i) {
+        //loop through each grid child
+       for ( let i = 0; i < count; ++i) {
         if (e.target.parentNode === currentChild[i]) {
           console.log(i);
           myLibrary.splice((i - 1), 1);
