@@ -125,8 +125,8 @@ a {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    -webkit-filter: blur(200px);
-    filter: blur(200px);
+    -webkit-filter: blur(170px);
+    filter: blur(170px);
     z-index: 2;
 
 }
@@ -134,37 +134,97 @@ a {
 .circle-1 {
 
     position: absolute;
-    width: 60vw;
-    height: 60vw;
+    width: 50vw;
+    height: 50vw;
     border-radius: 50%;
     background-color: #8267BE;
+    animation-name: circleMove;
+    animation-duration: 10s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+
 }
 
+@keyframes circleMove {
+
+    0%{ left: 0%; top: 0%}
+    50%{ left: -10%; top: -5%}
+    100%{left: 0%; top: 0%}
+
+    
+}
 
 .circle-2 {
 
     position: absolute;
-    right: -20px;
+    right: -10%;
     width: 50vw;
     height: 50vw;
     border-radius: 50%;
     background-color: #3FA796;
+    animation-name: circleMove2;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+
+}
+
+@keyframes circleMove2 {
+
+    0%{ right: 0%; top: 0%}
+    50%{ right: -10%; top: 20%}
+    100%{ right: 0%; top: 0%}
 
 }
 
 .circle-3 {
 
     position: absolute;
+    top: -17%;
     width: 30vw;
     height: 30vw;
     left: 30vw;
     border-radius: 50%;
     background-color: #FFBD35;
+    animation-name: circleMove3;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
 
 }
 
+@keyframes circleMove3 {
+
+    0%{ top: 0%}
+    50%{top: 20%}
+    100%{ right: 0%; top: 0%}
+
+}
+
+.circle-4 {
+
+    position: absolute;
+    bottom: -17%;
+    width: 30vw;
+    height: 30vw;
+    left: 30vw;
+    border-radius: 50%;
+    background-color: #f893d1;
+    animation-name: circleMove4;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+
+
+}
 /* modal pop up when user click on the add button */
 
+@keyframes circleMove4 {
+
+    0%{  bottom: -17%}
+    50%{ bottom: 17%}
+    100%{ bottom: 0%}
+}
 .c-modal {
 
     position: fixed;
@@ -457,12 +517,12 @@ button {
     height: 296px;
     background-image: linear-gradient(45deg, #8367be70, #dbdbdb60);
     z-index: 5;
-    
+
 }
 
 
 .c-book-item > a:hover {
     
     text-decoration: underline;
-
+    
 }
