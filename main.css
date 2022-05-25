@@ -74,6 +74,8 @@ h4 {
     font-weight: bold;
     font-size: 1.728rem;
     line-height: 24px;
+    margin-right: 20px;
+
 }
 
 h5 {
@@ -517,7 +519,7 @@ button {
 
     margin-top: 48px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     width: 80%;
     height: auto;
     row-gap: 32px;
