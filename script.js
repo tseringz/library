@@ -65,6 +65,10 @@ let myLibrary = [];  // myLibrary, empty array
     
     const form = document.querySelector('form');
     let userInputs = Array.from(document.querySelectorAll('input'));
+    const warningPopUp = document.querySelector('.warning');
+
+    if( userInputs[0].value !== "" && userInputs[1].value !== "" && userInputs[2].value !== "")
+    {
 
     let book  = new Book(userInputs[0].value, userInputs[1].value, userInputs[2].value, userInputs[3].checked);
     console.log(book);
@@ -72,7 +76,18 @@ let myLibrary = [];  // myLibrary, empty array
     updateLocalStorage();
     displayBook();
     form.reset();
+    warningPopUp.style.display = "none";
 
+    }
+    
+    else {
+
+        warningPopUp.style.display = "flex";
+        modalContainer.classList.add('c-modal-active');
+        
+        
+
+    }
 };
 
 
