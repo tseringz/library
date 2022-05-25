@@ -116,7 +116,7 @@ function createBook(index) {
             // New heading for page
         const howManyPages = document.createElement('p');
         howManyPages.style.marginTop = "42px";
-        howManyPages.textContent = `${index.pages.chartAt(0)} Pages`;
+        howManyPages.textContent = `${index.pages} Pages`;
         newDiv.appendChild(howManyPages);
 
              // New Remove Button
