@@ -125,8 +125,8 @@ a {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    -webkit-filter: blur(170px);
-    filter: blur(170px);
+    filter: blur(120px);
+    -webkit-filter: blur(120px);
     z-index: 2;
 
 }
@@ -138,20 +138,16 @@ a {
     height: 50vw;
     border-radius: 50%;
     background-color: #8267BE;
-    animation-name: circleMove;
-    animation-duration: 10s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
+    animation: circleMove 10s ease-in infinite;
 
 }
 
 @keyframes circleMove {
 
-    0%{ left: 0%; top: 0%}
-    50%{ left: -10%; top: -5%}
-    100%{left: 0%; top: 0%}
-
-    
+    0%{ transform: translateX(0%) translateY(0%);}
+    50%{transform: translateX(-10%) translateY(-10%);}
+    100%{transform: translateX(0%) translateY(0%);}
+  
 }
 
 .circle-2 {
@@ -171,9 +167,9 @@ a {
 
 @keyframes circleMove2 {
 
-    0%{ right: 0%; top: 0%}
-    50%{ right: -10%; top: 20%}
-    100%{ right: 0%; top: 0%}
+    0%{ transform: translateX(-10%) translateY(0%);}
+    50%{transform: translateX(-20%) translateY(20%);}
+    100%{transform: translateX(-10%) translateY(0%);}
 
 }
 
@@ -195,10 +191,9 @@ a {
 
 @keyframes circleMove3 {
 
-    0%{ top: 0%}
-    50%{top: 20%}
-    100%{ right: 0%; top: 0%}
-
+    0%{ transform: translateX(0%) translateY(0%);}
+    50%{transform: translateX(10%) translateY(30%);}
+    100%{transform: translateX(0%) translateY(0%);}
 }
 
 .circle-4 {
@@ -221,10 +216,11 @@ a {
 
 @keyframes circleMove4 {
 
-    0%{  bottom: -17%}
-    50%{ bottom: 17%}
-    100%{ bottom: 0%}
+    0%{ transform: translateX(0%) translateY(-20%);}
+    50%{transform: translateX(30%) translateY(20%);}
+    100%{transform: translateX(0%) translateY(-20%);}
 }
+
 .c-modal {
 
     position: fixed;
