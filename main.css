@@ -543,6 +543,7 @@ button {
     
 }
 
+ /* CSS validations */
 #page-number:invalid {  
 
     border-color: #f893d1;
