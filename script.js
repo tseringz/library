@@ -21,6 +21,7 @@ const modalContainer = document.querySelector(".c-modal");   // select modal con
 const closeButton = document.querySelector('#close').addEventListener('click', closeModal); // select close button and close modal when click it
 const submitButton = document.querySelector("#submit");
 submitButton.addEventListener('click', closeModal);  // when click on submit button, close the modal
+const warningPopUp = document.querySelector('.warning');
 submitButton.addEventListener('click', function(event) {
 
    event.preventDefault();
@@ -32,6 +33,7 @@ submitButton.addEventListener('click', function(event) {
 function closeModal() {
 
     modalContainer.classList.remove('c-modal-active');
+    warningPopUp.style.display = "none";
 
 }
 
@@ -65,8 +67,6 @@ let myLibrary = [];  // myLibrary, empty array
     
     const form = document.querySelector('form');
     let userInputs = Array.from(document.querySelectorAll('input'));
-    const warningPopUp = document.querySelector('.warning');
-
     if( userInputs[0].value !== "" && userInputs[1].value !== "" && userInputs[2].value !== "")
     {
 
@@ -85,8 +85,6 @@ let myLibrary = [];  // myLibrary, empty array
         warningPopUp.style.display = "flex";
         modalContainer.classList.add('c-modal-active');
         
-        
-
     }
 };
 
@@ -241,6 +239,26 @@ function restore() {
     }
 }
 restore();
+
+// form validation constraints API 
+
+let pageInput = document.querySelector('#page-number');
+let authorInput = document.querySelector('#author-name');
+
+pageInput.addEventListener('input', function() {  
+    pageInput.checkValidity();
+    pageInput.setCustomValidity('');
+    pageInput.reportValidity();
+});
+
+pageInput.addEventListener('invalid', function() { 
+        if(pageInput.value == '') { 
+            pageInput.setCustomValidity("Enter page number");
+        } else { 
+            pageInput.setCustomValidity("Page number must be more than 2 and less than 500");
+        }
+ });
+
 
 
 
