@@ -542,3 +542,8 @@ button {
     text-decoration: underline;
     
 }
+
+#page-number:invalid {  
+
+    border-color: #f893d1;
+}
