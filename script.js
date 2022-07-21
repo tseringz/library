@@ -71,7 +71,6 @@ let myLibrary = [];  // myLibrary, empty array
     {
 
     let book  = new Book(userInputs[0].value, userInputs[1].value, userInputs[2].value, userInputs[3].checked);
-    console.log(book);
     myLibrary.push(book);
     updateLocalStorage();
     displayBook();
@@ -81,17 +80,14 @@ let myLibrary = [];  // myLibrary, empty array
     }
     
     else {
-
         warningPopUp.style.display = "flex";
         modalContainer.classList.add('c-modal-active');
-        
     }
 };
 
 
 // display display function
 function displayBook() {
-
     const container = document.querySelector('.c-book');
     const books = document.querySelectorAll('.c-book-item');
     books.forEach(book => container.removeChild(book));
@@ -191,15 +187,13 @@ function createBook(index) {
 
 // Capitalise String 
 const capitalized = str => str.charAt(0).toUpperCase() + str.slice(1);
-console.log(capitalized('this is fucking crazy'));
-
 // Remove Book from the library
 function removeBook() {
-
     document.querySelector('.c-book').addEventListener('click', function(e){
         if(e.target.classList.contains('remove')) { 
         const currentChild = e.target.parentNode.parentNode.childNodes;
         const count = currentChild.length;
+        console.log(count);
         //loop through each grid child
        for ( let i = 0; i < count; ++i) {
         if (e.target.parentNode === currentChild[i]) {
