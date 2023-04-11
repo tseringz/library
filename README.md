@@ -1,5 +1,5 @@
 # Library
-This is the project from The Odin Project [curriculum].(https://www.theodinproject.com/lessons/foundations-calculator).
+This is the project from The Odin Project [curriculum].(https://www.theodinproject.com/lessons/node-path-javascript-library).
 
 ## Built With
 * HTML5
